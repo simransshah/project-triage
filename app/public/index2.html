@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My Page Title</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div id="mainContent" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <h2>Registration form</h2>
+        <br>
+        <form action="" method="post">
+       <table border=1>
+
+         <tr>
+        <td><label for="firstName">First Name</label></td>
+        <td><input type="text" class="form-control" name="firstName" id="firstName"><br></td>
+        </tr>
+
+        <tr>
+        <td><label for="lastName">Last Name</label></td>
+        <td><input type="text" class="form-control" name="lastName" id="lastName"><br></td>
+        </tr>
+
+        <tr>
+        <td><label for="sexAtBirth">Sex at Birth</label></td>
+        <td><input type="text" class="form-control" name="sexAtBirth" id="sexAtBirth"><br></td>
+        </tr>
+
+
+        <tr>
+        <td><label for="dob">Date of Birth</label></td>
+        <td><input type="date" class="form-control" name="dob" id="dob"><br></td>
+        </tr>
+
+        <tr>
+        <td colspan="2"><input class="btn btn-default" id="addNewPatient" type="submit" name="addNewPatient" id="addNewPatient" value="Add New Patient">
+        </tr>
+        </table>
+      </form>
+      </div>
+      <div id = "patientWaitingApp" class="queueView col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <div class="patientWaiting patient" v-bind:class="patient.priority + 'Priority'" v-for="patient in patients">
+        arrival time <br>
+        <span class="patientName">{{patient.firstName}}</span>
+        <span class="patientName">{{patient.lastName}}</span><br>
+        <span>{{patient.sexAtBirth}}</span>
+        <span>{{patient.dob}}</span>
+      </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/waiting.app.js"></script>
+</body>
+</html>
